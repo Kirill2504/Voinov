@@ -1,6 +1,8 @@
 package com.company;
 
 public class Phone {
+    public static int count = 0;
+    private String number = "none";
     int num;
     String model;
     int weight;
@@ -9,6 +11,7 @@ public class Phone {
         num = n;
         weight = w;
         model = m;
+        count++;
     }
 
     Phone(int n, String m) {
@@ -17,8 +20,22 @@ public class Phone {
         m = "kk";
     }
 
-    Phone() {
+    public Phone(String number) {
+        this.number = number;
+        count++;
+    }
 
+    Phone() {
+        count++;
+    }
+
+    static int getCountInstance() {
+        return count;
+    }
+
+    protected void finalize(){
+        System.out.println("In finalize");
+        count--;
     }
 
     void receiveCall(String name, int num) {
@@ -36,6 +53,7 @@ public class Phone {
     void sendMeassage(String... numbers) {
         for (String n : numbers)
             System.out.println("Sending message to phone " + n);
+
     }
 
 }

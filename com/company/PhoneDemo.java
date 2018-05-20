@@ -13,5 +13,7 @@ public class PhoneDemo {
         call.receiveCall("Папа ", 757636);
         Phone ms=new Phone();
         ms.sendMeassage("5675757","7657474","565666656");
+        Phone number1=new Phone();
+        System.out.println(Phone.getCountInstance());
     }
 }
