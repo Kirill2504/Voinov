@@ -12,7 +12,18 @@ public class Student {
         this.averageMark = averageMark;
     }
 
-    public Student(String pert, String petrov, int i, String work1){}
+    public Student(String Petr, String Petrov, int i, String work1) {
+
+    }
+
+    public double getScholarhip() {
+        if (getAverageMark() == 5) {
+            return 100;
+        } else {
+            return 80;
+        }
+    }
+
 
     public String getFirstName() {
         return firstName;
@@ -46,4 +57,3 @@ public class Student {
         this.averageMark = averageMark;
     }
 }
-
