@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Others;
 
 public class Phone {
     public static int count = 0;

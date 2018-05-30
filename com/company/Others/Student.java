@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Others;
 
 public class Student {
     private String firstName, lastName, group;

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Others;
 
 /**
  * Created by Student on 23.05.2018.
@@ -41,10 +41,34 @@ public class Circle extends Shape {
         System.out.println("Рисуем круг" + getColor() + "с координатами: " + getX() + " " + getY() + " " + getZ());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Circle)) return false;
+        if (!super.equals(o)) return false;
+
+        Circle circle = (Circle) o;
+
+        if (getX() != circle.getX()) return false;
+        if (getY() != circle.getY()) return false;
+        return getZ() == circle.getZ();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + getX();
+        result = 31 * result + getY();
+        result = 31 * result + getZ();
+        return result;
+    }
+
     public static void main(String[] args) {
         Shape[] shapes = new Shape[2];
         shapes[0] = new Circle("Black", 3, 5, 6);
         shapes[1] = new Circle("White", 5, 4, 3);
+
+
     }
 }
 

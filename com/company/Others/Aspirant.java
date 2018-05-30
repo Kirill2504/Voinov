@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Others;
 
 public class Aspirant extends Student {
     private int work;
