@@ -21,5 +21,22 @@ public class Book implements Printable {
 
     @Override
     public void print() {
+        System.out.println("Читаю " + this);
+    }
+
+    public static void printBook(Printable[] array) {
+        for (Printable printable : array) {
+            if (printable instanceof Book) {
+                System.out.println(printable);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Book book=new Book("Book1");
+        Book book1=new Book("Book1");
+        Magazine magazine=new Magazine("Book1");
+        Printable[]printables={book,book1,magazine};
+        Book.printBook(printables);
     }
 }
